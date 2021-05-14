@@ -139,7 +139,6 @@ struct _rtcData {
   #endif
 
   // sleep settings
-  uint32_t wakeTime;
   uint32_t globalTimeOffset;
   #ifdef FEATURE_SENSOR_MPU
     uint32_t sensor_mpu_timer;
@@ -173,7 +172,7 @@ void wifiSave( void ) {
   rtcData.wifiValid = true;
 }
 #ifdef FEATURE_SENSOR_MPU
-void mpuSave( uint32_t x, uint32_t y, uint32_t z ) {
+void mpuSave( float x, float y, float z ) {
   rtcData.mpuXcal = x;
   rtcData.mpuYcal = y;
   rtcData.mpuZcal = z;
@@ -729,19 +728,27 @@ void setup() {
     mpu6050.begin();
     #ifdef FEATURE_DEEPSLEEP
       if ( rtcData.mpuValid ) {
-        Serial.println("using stored MPU calibration");
-        mpu6050.setGyroOffsets( rtcData.mpuXcal, rtcData.mpuYcal, rtcData.mpuZcal );
+        Serial.println("using stored MPU calibration:");
+        float x = rtcData.mpuXcal; Serial.println(x);
+        float y = rtcData.mpuYcal; Serial.println(y);
+        float z = rtcData.mpuZcal; Serial.println(z);
+        mpu6050.setGyroOffsets( x, y, z );
       } else {
         mpu6050.calcGyroOffsets(true);
-        mpuSave( mpu6050.getGyroXoffset(), mpu6050.getGyroYoffset(), mpu6050.getGyroZoffset() );
+        Serial.println("=");
+        Serial.println("storing MPU calibration:");
+        float x = mpu6050.getGyroXoffset(); Serial.println(x);
+        float y = mpu6050.getGyroYoffset(); Serial.println(y);
+        float z = mpu6050.getGyroZoffset(); Serial.println(z);
+        mpuSave( x, y, z );
       }
     #else
       mpu6050.calcGyroOffsets(true);
+      Serial.println("=");
     #endif
     #if defined(ARDUINO_ESP8266_GENERIC)
       wdt_enable(WDTO_0MS);
     #endif
-    Serial.println("=");
   #endif
 
 
