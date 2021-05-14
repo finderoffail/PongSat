@@ -307,24 +307,24 @@ struct ipmac {
 };
 // lookup table for fixed IP addresses to avoid collisions
 const struct ipmac ipmacs[] = {
-  { "geiger1", "5C:CF:7F:04:C5:22", IPAddress( 192, 168, 1, 77 ) }, // geiger 1 
-  { "geiger2", "5C:CF:7F:04:C1:12", IPAddress( 192, 168, 1, 76 ) }, // geiger 2
-  { "module0", "5C:CF:7F:04:C6:05", IPAddress( 192, 168, 1, 75 ) }, // module 0
-  { "pongsat1", "5C:CF:7F:04:C3:BD", IPAddress( 192, 168, 1, 74 ) }, // module 1
+  { "geiger1", "5C:CF:7F:04:C5:22", IPAddress( 192, 168, 1, 77 ) }, // geiger 1 1MB
+  { "geiger2", "5C:CF:7F:04:C1:12", IPAddress( 192, 168, 1, 76 ) }, // geiger 2 1MB
+  { "module0", "5C:CF:7F:04:C6:05", IPAddress( 192, 168, 1, 75 ) }, // module 0 16MB
+  { "pongsat1", "5C:CF:7F:04:C3:BD", IPAddress( 192, 168, 1, 74 ) }, // module 1 16MB
   { "rocket0", "5C:CF:7F:04:C4:99", IPAddress( 192, 168, 1, 73 ) }, // module 2 16MB
-  { "module3", "5C:CF:7F:04:C5:FE", IPAddress( 192, 168, 1, 72 ) }, // module 3
-  { "module4", "5C:CF:7F:04:C7:06", IPAddress( 192, 168, 1, 71 ) }, // module 4
-  { "module5", "5C:CF:7F:04:C4:57", IPAddress( 192, 168, 1, 70 ) }, // module 5
-  { "module6", "5C:CF:7F:04:C5:C4", IPAddress( 192, 168, 1, 69 ) }, // module 6
-  { "module7", "5C:CF:7F:04:C7:30", IPAddress( 192, 168, 1, 68 ) }, // module 7
-  { "module8", "5C:CF:7F:04:C5:C0", IPAddress( 192, 168, 1, 67 ) }, // module 8
-  { "module9", "5C:CF:7F:04:C2:67", IPAddress( 192, 168, 1, 66 ) }, // module 9
-  { "module10", "5C:CF:7F:04:C6:D0", IPAddress( 192, 168, 1, 65 ) }, // module 10
-  { "module11", "5C:CF:7F:04:C5:EA", IPAddress( 192, 168, 1, 64 ) }, // module 11
-  { "module12", "5C:CF:7F:04:C1:DE", IPAddress( 192, 168, 1, 63 ) }, // module 12
-  { "pongsat13", "5C:CF:7F:04:C1:B0", IPAddress( 192, 168, 1, 62 ) }, // module 13
-  { "module14", "5C:CF:7F:04:C5:A7", IPAddress( 192, 168, 1, 61 ) }, // module 14
-  { "module15", "5C:CF:7F:04:C5:FF", IPAddress( 192, 168, 1, 60 ) }, // module 15
+  { "module3", "5C:CF:7F:04:C5:FE", IPAddress( 192, 168, 1, 72 ) }, // module 3 16MB
+  { "module4", "5C:CF:7F:04:C7:06", IPAddress( 192, 168, 1, 71 ) }, // module 4 16MB
+  { "module5", "5C:CF:7F:04:C4:57", IPAddress( 192, 168, 1, 70 ) }, // module 5 16MB
+  { "module6", "5C:CF:7F:04:C5:C4", IPAddress( 192, 168, 1, 69 ) }, // module 6 16MB
+  { "module7", "5C:CF:7F:04:C7:30", IPAddress( 192, 168, 1, 68 ) }, // module 7 16MB
+  { "module8", "5C:CF:7F:04:C5:C0", IPAddress( 192, 168, 1, 67 ) }, // module 8 16MB
+  { "module9", "5C:CF:7F:04:C2:67", IPAddress( 192, 168, 1, 66 ) }, // module 9 16MB
+  { "module10", "5C:CF:7F:04:C6:D0", IPAddress( 192, 168, 1, 65 ) }, // module 10 1MB
+  { "module11", "5C:CF:7F:04:C5:EA", IPAddress( 192, 168, 1, 64 ) }, // module 11 1MB
+  { "module12", "5C:CF:7F:04:C1:DE", IPAddress( 192, 168, 1, 63 ) }, // module 12 1MB
+  { "pongsat13", "5C:CF:7F:04:C1:B0", IPAddress( 192, 168, 1, 62 ) }, // module 13 1MB
+  { "module14", "5C:CF:7F:04:C5:A7", IPAddress( 192, 168, 1, 61 ) }, // module 14 1MB
+  { "module15", "5C:CF:7F:04:C5:FF", IPAddress( 192, 168, 1, 60 ) }, // module 15 1MB
 //  { "module16", "", IPAddress( 192, 168, 1, 59 ) }, // module 16 dead?
   { "module17", "18:FE:34:9B:68:F6", IPAddress( 192, 168, 1, 58 ) }  // module 17 original (512kB)
 };
