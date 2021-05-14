@@ -734,7 +734,7 @@ void setup() {
         float z = rtcData.mpuZcal; Serial.println(z);
         mpu6050.setGyroOffsets( x, y, z );
       } else {
-        mpu6050.calcGyroOffsets(true);
+        mpu6050.calcGyroOffsets(true, 3000, 0);
         Serial.println("=");
         Serial.println("storing MPU calibration:");
         float x = mpu6050.getGyroXoffset(); Serial.println(x);
@@ -743,7 +743,7 @@ void setup() {
         mpuSave( x, y, z );
       }
     #else
-      mpu6050.calcGyroOffsets(true);
+      mpu6050.calcGyroOffsets(true, 3000, 0);
       Serial.println("=");
     #endif
     #if defined(ARDUINO_ESP8266_GENERIC)
